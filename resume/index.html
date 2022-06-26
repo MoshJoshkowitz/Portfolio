@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Resume - Joshua Moskowitz</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="../universal.css" type="text/css">
+<script src="../java_half.js"></script>
+<style>
+	
+	.displayflexer > p { font-size: 11pt; }
+	
+	h1 { text-align: center; }
+	hr { margin: 10px 5px; }
+
+</style>
+</head>
+<body>
+
+<video playsinline autoplay muted loop poster="../assets/background.png" id="bgvid">
+	<source src="../assets/background_loop_trim.mp4" type="video/mp4">
+</video>
+
+<div id="corecontent">
+
+<div id="topbanner" style="margin-bottom: unset;"></div>
+
+<div class="featuredsection scroll1">
+	<h2 style="font-size: 21pt;">
+	Email: <a href="mailto:JoshuaMoskowitz99@gmail.com">JoshuaMoskowitz99@gmail.com</a><br>
+	Cell Phone Number: <a href="tel:(845) 772-1652">(845) 772-1652</a></h2>
+</div>
+
+<div id="adobe-dc-view" class="adobe-pdf parchment1"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">	
+	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+		var adobeDCView = new AdobeDC.View({clientId: "5f47df091bfd4a869a2e008e4b04ec1a", divId: "adobe-dc-view"});
+		adobeDCView.previewFile({
+			content:  {location: {url: "https://moshjoshkowitz.github.io/Portfolio/resume/Resume_2Game_Design_1.pdf"}},
+			metaData:{fileName: "Resume - Joshua"}
+		}, {embedMode: "SIZED_CONTAINER"});
+		
+		//modifyit();
+	});
+</script>
+
+<div id="backhomebutton">
+	<div id="backhomebehind">
+		<a href="..">
+			<div id="homeagain">
+				<p>Back to Main</p>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<!-- HEADER & CLOSEABLE PORTION -->
+
+<div id="backborder">
+<div id="closeX" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="grayback" onclick="closeit()">
+	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="header">
+	<div id="headerbg">
+		<a href=".."><h2>Home Page</h2></a>
+		<a href="../resume"><h2>Contact / Resume</h2></a>
+		<a href="https://linkedin.com/in/mosh-joshkowitz" target="_blank"><h2>My LinkedIn</h2></a>
+	</div>
+	
+	<div id="hback"><img src="../assets/header_blank.png"></div>
+	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">Joshua Moskowitz</h2></a></div>
+	
+	<div id="anchortext">
+		<a href="#top"><h2>Top</h2></a>
+	</div>
+</div>
+
+</body>
+<script>
+// CUT OFF PAGE WHERE THE BACK BUTTON IS: //
+var thebottom = document.getElementById("backhomebutton");
+
+window.onload = function(){
+	resizedocument();
+}
+window.onresize = function(){
+	resizedocument();
+}
+
+function resizedocument() {
+	var rect = thebottom.getBoundingClientRect();
+
+		document.body.style.height = rect.top + window.scrollY + "px";
+		//console.log(document.body.style.height);
+}
+
+// Create an observer object:
+const resizeObserver = new ResizeObserver(entries => resizedocument() 
+//console.log('Body height changed:', entries[0].target.clientHeight)
+);
+
+// Start watching for when the page resizes:
+resizeObserver.observe(document.body);
+
+// HOVER TO FRONT: //
+var imgdisplays = document.getElementsByClassName("talldisplay");
+
+for (var u = 0; u < imgdisplays.length; u++) {
+	imgdisplays[u].setAttribute("onmouseover", "highlight(this)");
+	imgdisplays[u].setAttribute("onmouseout", "unhighlight(this)");
+	imgdisplays[u].setAttribute("onclick", "focusme(this.childNodes[3].children)");
+	// ^ Makes the divs clickable, and preps the main child element for the focusme() function.
+}
+	
+function highlight(parchment) {
+	parchment.style.filter = "brightness(1.2)";
+	parchment.childNodes[3].style.filter = "brightness(0.825)"; //Counteracts the outer brightness filter.
+}
+function unhighlight(parchment) {
+	parchment.removeAttribute("style");
+	parchment.childNodes[3].removeAttribute("style");
+}
+
+function focusme(child) {
+	var grayback = document.getElementById("grayback");
+	var closeX2 = document.getElementById("closeX2");
+	grayback.style.display = "flex";
+	closeX2.style.display = "block";
+	
+	var copy = child[0].cloneNode(true); //Makes a copy of the the child element for the lightbox display.
+	
+	var newelement = document.createElement("div");
+	grayback.appendChild(newelement);
+	newelement.setAttribute("id", "focus");
+	newelement.appendChild(copy);
+}
+
+/* I spent like 2 hours trying to correct a problem with the font, when I realized I could just fix the font itself
+if (document.fonts.ready) { mythshireA() };
+function mythshireA() {
+	var headings = document.getElementsByTagName("h1");
+	console.log("fungus");
+	
+	for (var u = 0; u < headings.length; u++) {
+		headings[u].innerHTML = headings[u].innerHTML.replace(' A', ' . A');
+		console.log("sungus" + u);
+	}
+}*/
+
+/*function modifyit() {
+	document.getElementById('iframe-adobe-dc-view').setAttribute("sandbox", "allow-scripts");
+	document.getElementById('iframe-adobe-dc-view').setAttribute("onload", "onFrameLoad()");
+	//document.getElementById('iframe-adobe-dc-view').setAttribute("style", "overflow: visible !important; text-overflow: unset !important;");
+}
+
+function onFrameLoad() {
+	var title = document.getElementById('iframe-adobe-dc-view').contentWindow.document.getElementsByClassName("sdk-HeaderFileInfoView-fileBreadCrumb");
+	console.log(title);
+	console.log(title[0]);
+	title[0].setAttribute("style", "overflow: visible !important");
+	title[0].setAttribute("style", "text-overflow: unset !important");
+}*/
+
+</script>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Strato-Sphere / Chloe - Joshua Moskowitz</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="../universal.css" type="text/css">
+<script src="../java_half.js"></script>
+<style>
+	
+	.displayflexer > p { font-size: 11pt; }
+	
+	h1 { text-align: center; }
+	hr { margin: 10px 5px; }
+	
+	.talldisplay { justify-content: center; }
+
+</style>
+</head>
+<body>
+
+<video playsinline autoplay muted loop poster="../assets/background.png" id="bgvid">
+	<source src="../assets/background_loop_trim.mp4" type="video/mp4">
+</video>
+
+<div id="corecontent">
+
+<div id="topbanner">
+	<div style="display: block; position: relative; max-width: 90%;">
+		<img id="titleimg" src="cover.png" alt="Strato-Sphere, Featuring Chloe" title="Strato-Sphere, Featuring Chloe">
+	<div class="coverimage"></div>
+	</div>
+</div>
+
+<div class="featuredsection scroll1">
+<h1>Strato-Sphere / Chloe</h1>
+</div>
+	
+<div class="displayflexer">
+<div class="widedisplay parchment2" style="padding: 20px">
+	<h2 style="text-align: left">My final project submission for the Intro to Character Design/Development class I took during my junior year at SUNY Polytechnic Institute.<br><br>
+	Our task for this project was to design a character and create a game concept that the character would be a part of.<br><br>
+	Strato-Sphere is a puzzle game designed for kids in which the player plays as a secret agent and must solve challenging puzzles in order to stop an evil organization's plan and to escape their stronghold.<br><br>
+	To assist you is Chloe, a member of the same agency of the player who assists them with some of the puzzles. The catch however is that sometimes the advice and answers she gives are not always correct. Therefore, it is up to the player to use their intuition and problem-solving skills to stop the bad guys and escape the stronghold.
+	</h2>
+</div>
+</div>
+
+<br><br><br>
+
+<div class="featuredsection scroll3"> <a name="sprites"></a>
+<h1>Chloe Spritework</h1>
+</div>
+
+<div class="displayflexer">
+	<div>
+		<div class="imageside" style="cursor: auto;">
+			<img style="max-height: 50vh;" src="editor.png">
+		</div>
+	</div>
+</div>
+
+<div class="displayflexer">
+	
+	<div class="talldisplay parchment4">
+		<h2 class="hiddenlabel">hidden</h2>
+		<div class="imageside">
+			<img src="chloe1.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay parchment2">
+		<h2 class="hiddenlabel">hidden</h2>
+		<div class="imageside">
+			<img src="chloe2.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay parchment1">
+		<h2 class="hiddenlabel">hidden</h2>
+		<div class="imageside">
+			<img src="chloe3.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay parchment4">
+		<h2 class="hiddenlabel">hidden</h2>
+		<div class="imageside">
+			<img src="chloe4.png">
+		</div>
+	</div>
+	
+	<div class="talldisplay parchment1">
+		<h2>
+		Gameplay Example
+		</h2>
+		<div class="imageside">
+			<img src="typing.png">
+		</div>
+	</div>
+	
+</div>
+
+<br><br><br>
+
+
+<div class="featuredsection scroll2"> <a name="document"></a>
+<h1>Character Design Document</h1>
+</div>
+
+<div id="adobe-dc-view" class="adobe-pdf parchment1"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">	
+	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+		var adobeDCView = new AdobeDC.View({clientId: "5f47df091bfd4a869a2e008e4b04ec1a", divId: "adobe-dc-view"});
+		adobeDCView.previewFile({
+			content:  {location: {url: "https://moshjoshkowitz.github.io/Portfolio/stratosphere/Final_Project.pdf"}},
+			metaData:{fileName: "Strato-Sphere: Chloe"}
+		}, {embedMode: "SIZED_CONTAINER"});
+		
+		//modifyit();
+	});
+</script>
+
+<div id="backhomebutton">
+	<div id="backhomebehind">
+		<a href="..">
+			<div id="homeagain">
+				<p>Back to Main</p>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<!-- HEADER & CLOSEABLE PORTION -->
+
+<div id="backborder">
+<div id="closeX" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="grayback" onclick="closeit()">
+	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="header">
+	<div id="headerbg">
+		<a href=".."><h2>Home Page</h2></a>
+		<a href="../resume"><h2>Contact / Resume</h2></a>
+		<a href="https://linkedin.com/in/mosh-joshkowitz" target="_blank"><h2>My LinkedIn</h2></a>
+	</div>
+	
+	<div id="hback"><img src="../assets/header_blank.png"></div>
+	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">Joshua Moskowitz</h2></a></div>
+	
+	<div id="anchortext">
+		<a href="#top"><h2>Top</h2></a>
+		<a href="#sprites"><h2>Chloe Spritework</h2></a>
+		<a href="#document"><h2>Character Design Document</h2></a>
+	</div>
+</div>
+
+</body>
+<script>
+// CUT OFF PAGE WHERE THE BACK BUTTON IS: //
+var thebottom = document.getElementById("backhomebutton");
+
+window.onload = function(){
+	resizedocument();
+}
+window.onresize = function(){
+	resizedocument();
+}
+
+function resizedocument() {
+	var rect = thebottom.getBoundingClientRect();
+
+		document.body.style.height = rect.top + window.scrollY + "px";
+		//console.log(document.body.style.height);
+}
+
+// Create an observer object:
+const resizeObserver = new ResizeObserver(entries => resizedocument() 
+//console.log('Body height changed:', entries[0].target.clientHeight)
+);
+
+// Start watching for when the page resizes:
+resizeObserver.observe(document.body);
+
+// HOVER TO FRONT: //
+var imgdisplays = document.getElementsByClassName("talldisplay");
+
+for (var u = 0; u < imgdisplays.length; u++) {
+	imgdisplays[u].setAttribute("onmouseover", "highlight(this)");
+	imgdisplays[u].setAttribute("onmouseout", "unhighlight(this)");
+	imgdisplays[u].setAttribute("onclick", "focusme(this.childNodes[3].children)");
+	// ^ Makes the divs clickable, and preps the main child element for the focusme() function.
+}
+	
+function highlight(parchment) {
+	parchment.style.filter = "brightness(1.2)";
+	parchment.childNodes[3].style.filter = "brightness(0.825)"; //Counteracts the outer brightness filter.
+}
+function unhighlight(parchment) {
+	parchment.removeAttribute("style");
+	parchment.childNodes[3].removeAttribute("style");
+}
+
+function focusme(child) {
+	var grayback = document.getElementById("grayback");
+	var closeX2 = document.getElementById("closeX2");
+	grayback.style.display = "flex";
+	closeX2.style.display = "block";
+	
+	var copy = child[0].cloneNode(true); //Makes a copy of the the child element for the lightbox display.
+	
+	var newelement = document.createElement("div");
+	grayback.appendChild(newelement);
+	newelement.setAttribute("id", "focus");
+	newelement.appendChild(copy);
+}
+
+/*function modifyit() {
+	document.getElementById('iframe-adobe-dc-view').setAttribute("sandbox", "allow-scripts");
+	document.getElementById('iframe-adobe-dc-view').setAttribute("onload", "onFrameLoad()");
+	//document.getElementById('iframe-adobe-dc-view').setAttribute("style", "overflow: visible !important; text-overflow: unset !important;");
+}
+
+function onFrameLoad() {
+	var title = document.getElementById('iframe-adobe-dc-view').contentWindow.document.getElementsByClassName("sdk-HeaderFileInfoView-fileBreadCrumb");
+	console.log(title);
+	console.log(title[0]);
+	title[0].setAttribute("style", "overflow: visible !important");
+	title[0].setAttribute("style", "text-overflow: unset !important");
+}*/
+
+</script>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Key Slinger - Joshua Moskowitz</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="../universal.css" type="text/css">
+<script src="../java_half.js"></script>
+<style>
+	
+	.displayflexer > p { font-size: 11pt; }
+	
+	h1 { text-align: center; }
+	hr { margin: 10px 5px; }
+	
+	.talldisplay { justify-content: center; }
+	
+	#gamewindow {
+		width: 90%;
+		aspect-ratio: 1280 / 720;
+		margin: auto;
+		border: none;
+	}
+
+</style>
+</head>
+<body>
+
+<video playsinline autoplay muted loop poster="../assets/background.png" id="bgvid">
+	<source src="../assets/background_loop_trim.mp4" type="video/mp4">
+</video>
+
+<div id="corecontent">
+
+<div id="topbanner">
+	<div style="display: block; position: relative; max-width: 90%;">
+		<img id="titleimg" src="cover.png" alt="Key Slinger" style="background-color: #00919d;">
+	<div class="coverimage"></div>
+	</div>
+</div>
+
+<div class="featuredsection scroll1">
+<h1>Key Slinger</h1>
+</div>
+	
+<div class="displayflexer">
+<div class="widedisplay parchment2" style="padding: 20px">
+	<h2 style="text-align: left">Key Slinger is a quick-time arcade-styled game in which the player, a samurai gunslinger, slices and shoots creatures from hell to try and get the highest score possible.<br><br>
+	To slay the enemies coming towards the player, they must press the corresponding key on their keyboard to the letter on top of the closest enemy (Either W, A, S, or D). For each enemy you slay you gain a little bit of health back, however, press the wrong key and the player will lose some health and be stunned for a short period of time. The player loses when the health bar at the bottom is depleted.<br><br>
+	This is a passion project I made that was done in my free time using Unity. Below is the prototype of Key Slinger along with the Game Design Document (GDD) for the game and my plans for it moving forward.
+	</h2>
+</div>
+</div>
+
+<br><br><br>
+
+<div class="featuredsection scroll3"> <a name="game"></a>
+<h1>Playable Game</h1>
+</div>
+
+<div class="displayflexer">
+	<div class="widedisplay parchment1" style="padding: 20px; flex-direction: column;">
+		<iframe id="gamewindow" src="./KeyslingerUpdate/index.html"></iframe>
+		<h2>Slay enemies coming towards you using both your sword and gun.<br><br>
+		Sword(W, A. S, D): When an enemy is within the pink circle, press the keyboard key corresponding to the letter on top of the enemy to slice them in half at blinding speed. You can hit multiple enemies with the same key at once.<br><br>
+		Gun(I, J, K, L): Press the key on your keyboard to the corresponding letter on top of the closest target (highlighted in yellow) to shoot your gun with pinpoint accuracy.<br><br>
+		For each enemy you slay, you gain a bit of health. Press the wrong key, and you will lose some health and be stunned for a moment. If your health bar is depleted, you lose. More challenging enemies appear over time!<br><br>
+		How long can you last?</h2>
+	</div>
+</div>
+
+<br><br><br>
+
+<div class="featuredsection scroll2"> <a name="document"></a>
+<h1>Game Design Document</h1>
+</div>
+
+<div id="adobe-dc-view" class="adobe-pdf parchment1"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">	
+	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+		var adobeDCView = new AdobeDC.View({clientId: "5f47df091bfd4a869a2e008e4b04ec1a", divId: "adobe-dc-view"});
+		adobeDCView.previewFile({
+			content:  {location: {url: "https://moshjoshkowitz.github.io/Portfolio/keyslinger/keyslingerGDDcopy.pdf"}},
+			metaData:{fileName: "Key Slinger GDD"}
+		}, {embedMode: "SIZED_CONTAINER"});
+		
+		//modifyit();
+	});
+</script>
+
+<div id="backhomebutton">
+	<div id="backhomebehind">
+		<a href="..">
+			<div id="homeagain">
+				<p>Back to Main</p>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<!-- HEADER & CLOSEABLE PORTION -->
+
+<div id="backborder">
+<div id="closeX" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="grayback" onclick="closeit()">
+	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="header">
+	<div id="headerbg">
+		<a href=".."><h2>Home Page</h2></a>
+		<a href="../resume"><h2>Contact / Resume</h2></a>
+		<a href="https://linkedin.com/in/mosh-joshkowitz" target="_blank"><h2>My LinkedIn</h2></a>
+	</div>
+	
+	<div id="hback"><img src="../assets/header_blank.png"></div>
+	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">Joshua Moskowitz</h2></a></div>
+	
+	<div id="anchortext">
+		<a href="#top"><h2>Top</h2></a>
+		<a href="#game"><h2>Playable Game</h2></a>
+		<a href="#document"><h2>Game Design Document</h2></a>
+	</div>
+</div>
+
+</body>
+<script>
+// CUT OFF PAGE WHERE THE BACK BUTTON IS: //
+var thebottom = document.getElementById("backhomebutton");
+
+window.onload = function(){
+	resizedocument();
+}
+window.onresize = function(){
+	resizedocument();
+}
+
+function resizedocument() {
+	var rect = thebottom.getBoundingClientRect();
+
+		document.body.style.height = rect.top + window.scrollY + "px";
+		//console.log(document.body.style.height);
+}
+
+// Create an observer object:
+const resizeObserver = new ResizeObserver(entries => resizedocument() 
+//console.log('Body height changed:', entries[0].target.clientHeight)
+);
+
+// Start watching for when the page resizes:
+resizeObserver.observe(document.body);
+
+// HOVER TO FRONT: //
+var imgdisplays = document.getElementsByClassName("talldisplay");
+
+for (var u = 0; u < imgdisplays.length; u++) {
+	imgdisplays[u].setAttribute("onmouseover", "highlight(this)");
+	imgdisplays[u].setAttribute("onmouseout", "unhighlight(this)");
+	imgdisplays[u].setAttribute("onclick", "focusme(this.childNodes[3].children)");
+	// ^ Makes the divs clickable, and preps the main child element for the focusme() function.
+}
+	
+function highlight(parchment) {
+	parchment.style.filter = "brightness(1.2)";
+	parchment.childNodes[3].style.filter = "brightness(0.825)"; //Counteracts the outer brightness filter.
+}
+function unhighlight(parchment) {
+	parchment.removeAttribute("style");
+	parchment.childNodes[3].removeAttribute("style");
+}
+
+function focusme(child) {
+	var grayback = document.getElementById("grayback");
+	var closeX2 = document.getElementById("closeX2");
+	grayback.style.display = "flex";
+	closeX2.style.display = "block";
+	
+	var copy = child[0].cloneNode(true); //Makes a copy of the the child element for the lightbox display.
+	
+	var newelement = document.createElement("div");
+	grayback.appendChild(newelement);
+	newelement.setAttribute("id", "focus");
+	newelement.appendChild(copy);
+}
+
+/*function modifyit() {
+	document.getElementById('iframe-adobe-dc-view').setAttribute("sandbox", "allow-scripts");
+	document.getElementById('iframe-adobe-dc-view').setAttribute("onload", "onFrameLoad()");
+	//document.getElementById('iframe-adobe-dc-view').setAttribute("style", "overflow: visible !important; text-overflow: unset !important;");
+}
+
+function onFrameLoad() {
+	var title = document.getElementById('iframe-adobe-dc-view').contentWindow.document.getElementsByClassName("sdk-HeaderFileInfoView-fileBreadCrumb");
+	console.log(title);
+	console.log(title[0]);
+	title[0].setAttribute("style", "overflow: visible !important");
+	title[0].setAttribute("style", "text-overflow: unset !important");
+}*/
+
+</script>
+</html>

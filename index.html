@@ -1,1 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Joshua Moskowitz</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="universal.css" type="text/css">
+<script src="java_half.js"></script>
+<style>
+	
+	.displayflexer > p { font-size: 11pt; }
+	
+	h1 { text-align: center; }
+	hr { margin: 10px 5px; }
+	
+	.displayflexer { gap: 70px 35px; max-width: 1600px; }
+	
+	.wispcircle {	
+		transform-origin: center;
+		animation-name: spin;
+		animation-duration: 20s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		
+		width: 100%;
+		max-width: 300px;
+		pointer-events: none;
+	}
 
+	@keyframes spin {
+		0%   { transform: rotate(0deg) scale(1.15); }
+		100% { transform: rotate(-360deg) scale(1.15); }
+	}
+	
+	.bignavigation {
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.bignavigation a {
+		display: contents;
+	}
+	
+	.bignavimg {
+		border-radius: 100%;
+		background-size: cover;
+		cursor: pointer;
+		transition: filter .25s;
+		background-position: center;
+	}
+	
+	.bignavimg:hover, .bignavtextbox:hover {
+		filter: brightness(1.2);
+		transition: filter .5s;
+	}
+	
+	.bignavtextbox {
+		position: absolute;
+		bottom: -2%;
+		background-color: var(--dark-color);
+		width: 90%;
+		text-align: center;
+		box-shadow: 0 0 5px 10px var(--dark-color), 0 0 25px 20px var(--deep-sky);
+		border-radius: 10%;
+		transition: filter .25s;
+	}
+	
+	.bignavtextbox h2 {
+		color: #38f0f8;
+		margin: 5px 0px;
+		font-size: 21pt;
+	}
+	
+	#topbanner { margin-bottom: unset; }
+	
+</style>
+</head>
+<body>
+
+<video playsinline autoplay muted loop poster="assets/background.png" id="bgvid">
+	<source src="assets/background_loop_trim.mp4" type="video/mp4">
+</video>
+
+<div id="corecontent">
+
+<div id="topbanner">
+	<!--div style="display: block; position: relative; max-width: 90%;">
+		<img id="titleimg" src="cover.jpg" alt="Map of the labyrinth" title="Map of the labyrinth">
+	<div class="coverimage"></div>
+	</div-->
+</div>
+
+<div class="featuredsection scroll4">
+<h1>Hi, I'm Joshua Moskowitz!</h1>
+</div>
+
+<div class="displayflexer">
+	<div class="widedisplay wideparchment2" style="padding: 20px;">
+		<h2>I'm a Game Designer fresh out of the SUNY Polytechnic Institute in Utica, NY. I love creating interesting and exciting worlds, characters, and gameplay mechanics. I also occasionally do some pixel art concepts.<br>Scroll down to see what I've done!</h2>
+	</div>
+</div>
+
+<br><br><br>
+	
+<div class="displayflexer">
+	
+	<div class="bignavigation">
+		<a href="./labyrinth">
+			<div class="bignavimg" style="background-image: url(./labyrinth/cover.jpg);">
+				<img src="assets/wisp_circle.png" class="wispcircle" style="filter: hue-rotate(45deg);">
+			</div>
+			<div class="bignavtextbox">
+				<h2>D&D: The Labyrinth</h2>
+			</div>
+		</a>
+	</div>
+	
+	<div class="bignavigation">
+		<a href="./keyslinger">
+			<div class="bignavimg" style="background-image: url(./keyslinger/cover.png); background-color: #00919d; background-position: unset;">
+				<img src="assets/wisp_circle.png" class="wispcircle" style="filter: hue-rotate(30deg);">
+			</div>
+			<div class="bignavtextbox">
+				<h2>Key Slinger</h2>
+			</div>
+		</a>
+	</div>
+	
+	<div class="bignavigation">
+		<a href="./stratosphere">
+			<div class="bignavimg" style="background-image: url(./stratosphere/chloe1.png); background-color: #7092be;">
+				<img src="assets/wisp_circle.png" class="wispcircle" style="filter: hue-rotate(15deg);">
+			</div>
+			<div class="bignavtextbox">
+				<h2>Strato-Sphere / Chloe</h2>
+			</div>
+		</a>
+	</div>
+	
+	<div class="bignavigation">
+		<a href="./star">
+			<div class="bignavimg" style="background-image: url(./star/cover2.png);">
+				<img src="assets/wisp_circle.png" class="wispcircle" style="filter: hue-rotate(0deg);">
+			</div>
+			<div class="bignavtextbox">
+				<h2>Space Traders and Raiders</h2>
+			</div>
+		</a>
+	</div>
+	
+	<div class="bignavigation">
+		<a href="./sphereport">
+			<div class="bignavimg" style="background-image: url(./sphereport/cover.png); background-size: inherit;">
+				<img src="assets/wisp_circle.png" class="wispcircle" style="filter: hue-rotate(-15deg);">
+			</div>
+			<div class="bignavtextbox">
+				<h2>Sphereport</h2>
+			</div>
+		</a>
+	</div>
+	
+	<div class="bignavigation">
+		<a href="./misc">
+			<div class="bignavimg" style="background-image: url(./misc/cover.png);">
+				<img src="assets/wisp_circle.png" class="wispcircle" style="filter: hue-rotate(-30deg);">
+			</div>
+			<div class="bignavtextbox">
+				<h2>Miscellaneous Art</h2>
+			</div>
+		</a>
+	</div>
+	
+</div>
+
+<br><br><br><br><br><br>
+
+</div>
+
+<!-- HEADER -->
+
+<div id="header">
+	<div id="headerbg">
+		<a href=""><h2>Home Page</h2></a>
+		<a href="/resume"><h2>Contact / Resume</h2></a>
+		<a href="https://linkedin.com/in/mosh-joshkowitz" target="_blank"><h2>My LinkedIn</h2></a>
+	</div>
+	
+	<div id="hback"><img src="./assets/header_blank.png"></div>
+	<div id="htext"><a href=""><h2 id="htext1" onclick="closeit()">Joshua Moskowitz</h2></a></div>
+	
+	<div id="anchortext">
+		<a href="#top"><h2>Top</h2></a>
+	</div>
+</div>
+
+</body>
+</html>
