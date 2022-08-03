@@ -9,19 +9,18 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1020 height=600></canvas>
+      <canvas id="unity-canvas" style="max-width: 1020px; max-height: 600px;"></canvas>
       <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
       <div id="unity-warning"> </div>
-      <div id="unity-footer">
+      <!--div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">KeySlinger</div>
-      </div>
+      </div-->
     </div>
     <script>
       var container = document.querySelector("#unity-container");
@@ -37,7 +36,7 @@
       // Modify or remove this function to customize the visually presented
       // way that non-critical warnings and error messages are presented to the
       // user.
-      function unityShowBanner(msg, type) {
+      /*function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
           warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
         }
@@ -53,7 +52,7 @@
           }, 5000);
         }
         updateBannerVisibility();
-      }
+      }*/
 
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/KeyslingerFinal.loader.js";
@@ -65,7 +64,7 @@
         companyName: "Mosh_Joshkowitz",
         productName: "KeySlinger",
         productVersion: ".9",
-        showBanner: unityShowBanner,
+        //showBanner: unityShowBanner,
       };
 
       // By default Unity keeps WebGL canvas render target size matched with
@@ -81,10 +80,10 @@
         // and default/override low DPI mode on mobile browsers.
         config.devicePixelRatio = 1;
         unityShowBanner('WebGL builds are not supported on mobile devices.');
-      } else {
+      } /*else {
         canvas.style.width = "1020px";
         canvas.style.height = "600px";
-      }
+      }*/
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
@@ -94,9 +93,9 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
+          /*fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
-          };
+          };*/
         }).catch((message) => {
           alert(message);
         });
