@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WikiSnipes - Joshua Moskowitz</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="../universal.css" type="text/css">
+<script src="../java_half.js"></script>
+<style>
+	
+	.displayflexer > p { font-size: 11pt; }
+	
+	h1 { text-align: center; }
+	hr { margin: 10px 5px; }
+
+</style>
+</head>
+<body>
+
+<video playsinline autoplay muted loop poster="../assets/background.png" id="bgvid">
+	<source src="../assets/background_loop_trim.mp4" type="video/mp4">
+</video>
+
+<div id="corecontent">
+
+<div id="topbanner">
+	<div style="display: block; position: relative; max-width: 90%;">
+		<img id="titleimg" src="cover.png" alt="Four beings of different species surround the title of the game" title="STAR Thumbnail">
+	<div class="coverimage"></div>
+	</div>
+</div>
+
+<div class="featuredsection scroll3">
+<h1>WikiSnipes</h1>
+</div>
+
+<div class="displayflexer">
+	<div class="widedisplay parchment1" style="padding: 20px;"> <!--change this-->
+		<h2 style="text-align: left;">Class group project for Video Game Design Studio.<br>As a class, we were to create a game similar to our Professor's pre-existing space-themed board game.<br><br>
+		We decided to create a strategy, resource management, turn-based space game. The players' goal was to either conquer more than half the galaxy with a fleet of space ships or amass enough resources to claim victory.<br><br>
+		I was assigned as the lead designer on this project and was in charge of two other designers. While the time constraint of the semester and our skill limitations were issues we ran to early on, the designer's biggest issue we encountered was with the complex and disorganized rule book for the original game we were given by our client. Due to Covid 19, we were unable to playtest the original board game properly, so we only had the rule book to go off of, making figuring out all the rules of the game very challenging. Our solution was to put together our own rule book using the original rule book and our own design changes.</h2>
+	</div>
+</div>
+
+<br><br><br>
+
+<div class="featuredsection scroll1"> <a name="game"></a>
+<h1>Downloadable Game</h1>
+</div>
+	
+<div class="displayflexer">
+	
+	<div class="widedisplay wideparchment3">
+		<div class="imagesidehoverless">
+			<a href="https://mosh-joshkowitz.itch.io/wiki-snipes" target="_blank"><!--and this-->
+			<img src="chest_wikisnipes.png">
+			</a>
+		</div>
+		<div class="widetextside">
+			<h2>
+			<a href="https://mosh-joshkowitz.itch.io/wiki-snipes" target="_blank">Game Download</a>
+			</h2>
+			<p>This is the final playable build of the game.<br><br>(Click on the chest or the title above to go to the Itch.io page)</p><!--and this-->
+		</div>
+	</div>
+	
+</div>
+
+<br><br><br>
+
+<div id="backhomebutton">
+	<div id="backhomebehind">
+		<a href="..">
+			<div id="homeagain">
+				<p>Back to Main</p>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<!-- HEADER & CLOSEABLE PORTION -->
+
+<div id="backborder">
+<div id="closeX" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="grayback" onclick="closeit()">
+	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="header">
+	<div id="headerbg">
+		<a href=".."><h2>Home Page</h2></a>
+		<a href="../resume"><h2>Contact / Resume</h2></a>
+		<a href="https://linkedin.com/in/mosh-joshkowitz" target="_blank"><h2>My LinkedIn</h2></a>
+	</div>
+	
+	<div id="hback"><img src="../assets/header_blank.png"></div>
+	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">Joshua Moskowitz</h2></a></div>
+	
+	<div id="anchortext">
+		<a href="#top"><h2>Top</h2></a>
+		<a href="#game"><h2>Downloadable Game</h2></a>
+		<a href="#document"><h2>Game Design Document</h2></a>
+	</div>
+</div>
+
+</body>
+<script>
+// CUT OFF PAGE WHERE THE BACK BUTTON IS: //
+var thebottom = document.getElementById("backhomebutton");
+
+window.onload = function(){
+	resizedocument();
+}
+window.onresize = function(){
+	resizedocument();
+}
+
+function resizedocument() {
+	var rect = thebottom.getBoundingClientRect();
+
+		document.body.style.height = rect.top + window.scrollY + "px";
+		//console.log(document.body.style.height);
+}
+
+// Create an observer object:
+const resizeObserver = new ResizeObserver(entries => resizedocument() 
+//console.log('Body height changed:', entries[0].target.clientHeight)
+);
+
+// Start watching for when the page resizes:
+resizeObserver.observe(document.body);
+
+// HOVER TO FRONT: //
+var imgdisplays = document.getElementsByClassName("talldisplay");
+
+for (var u = 0; u < imgdisplays.length; u++) {
+	imgdisplays[u].setAttribute("onmouseover", "highlight(this)");
+	imgdisplays[u].setAttribute("onmouseout", "unhighlight(this)");
+	imgdisplays[u].setAttribute("onclick", "focusme(this.childNodes[3].children)");
+	// ^ Makes the divs clickable, and preps the main child element for the focusme() function.
+}
+	
+function highlight(parchment) {
+	parchment.style.filter = "brightness(1.2)";
+	parchment.childNodes[3].style.filter = "brightness(0.825)"; //Counteracts the outer brightness filter.
+}
+function unhighlight(parchment) {
+	parchment.removeAttribute("style");
+	parchment.childNodes[3].removeAttribute("style");
+}
+
+function focusme(child) {
+	var grayback = document.getElementById("grayback");
+	var closeX2 = document.getElementById("closeX2");
+	grayback.style.display = "flex";
+	closeX2.style.display = "block";
+	
+	var copy = child[0].cloneNode(true); //Makes a copy of the the child element for the lightbox display.
+	
+	var newelement = document.createElement("div");
+	grayback.appendChild(newelement);
+	newelement.setAttribute("id", "focus");
+	newelement.appendChild(copy);
+}
+
+/*function modifyit() {
+	document.getElementById('iframe-adobe-dc-view').setAttribute("sandbox", "allow-scripts");
+	document.getElementById('iframe-adobe-dc-view').setAttribute("onload", "onFrameLoad()");
+	//document.getElementById('iframe-adobe-dc-view').setAttribute("style", "overflow: visible !important; text-overflow: unset !important;");
+}
+
+function onFrameLoad() {
+	var title = document.getElementById('iframe-adobe-dc-view').contentWindow.document.getElementsByClassName("sdk-HeaderFileInfoView-fileBreadCrumb");
+	console.log(title);
+	console.log(title[0]);
+	title[0].setAttribute("style", "overflow: visible !important");
+	title[0].setAttribute("style", "text-overflow: unset !important");
+}*/
+
+</script>
+</html>
