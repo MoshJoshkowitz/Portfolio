@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Potion Merchant - Joshua Moskowitz</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="../universal.css" type="text/css">
+<script src="../java_half.js"></script>
+<style>
+	
+	.displayflexer > p { font-size: 11pt; }
+	
+	h1 { text-align: center; }
+	hr { margin: 10px 5px; }
+
+</style>
+</head>
+<body>
+
+<video playsinline autoplay muted loop poster="../assets/background.png" id="bgvid">
+	<source src="../assets/background_loop_trim.mp4" type="video/mp4">
+</video>
+
+<div id="corecontent">
+
+<div id="topbanner">
+	<div style="display: block; position: relative; max-width: 90%;">
+	<div class="coverimage"></div>
+	</div>
+</div>
+
+<div class="featuredsection scroll3">
+<h1>Potion Merchant</h1>
+</div>
+
+<div class="displayflexer">
+	<div class="widedisplay parchment1" style="padding: 20px;">
+		<h2 style="text-align: left;">Made for the 2024 Global Game Jam.<br>The challenge was to make a game within 48 hours with the theme "Make me laugh".<br>
+		<br>This was my first attempt at making a VR game. In the demo, the player plays as a traveling merchant who sells wacky remedies to their clients. Customres will request what the potion is and what color it's supposed to be.
+		It's up to the player, through trial and error, to craft the requested potion.<br>Art and sound was done by John823 while I did the rest(design and particle effects, programming).</h2>
+	</div>
+</div>
+
+<br><br><br>
+
+<div class="featuredsection scroll1"> <a name="video"></a>
+<h1>Gameplay</h1>
+</div>
+
+
+<div class="displayflexer">
+	<div class="widedisplay parchment1" style="padding: 30px; flex-direction: column;">
+		<iframe id="video" src="PotionMerchantVideo.mp4" height="550px"></iframe><!--Grab video from laptop-->
+	</div>
+</div>
+
+<div class="featuredsection scroll1"> <a name="game"></a>
+<h1>Download</h1>
+</div>
+	
+<div class="displayflexer">
+	<div class="imagesidehoverless">
+			<a href="https://globalgamejam.org/games/2024/potion-merchant-6" target="_blank"><!--and this-->
+			<img src="potionmerchantchest.png">
+			</a>
+	</div>
+</div>
+
+<br><br><br>
+
+<div id="backhomebutton">
+	<div id="backhomebehind">
+		<a href="..">
+			<div id="homeagain">
+				<p>Back to Main</p>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<!-- HEADER & CLOSEABLE PORTION -->
+
+<div id="backborder">
+<div id="closeX" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="grayback" onclick="closeit()">
+	<div id="closeX2" onclick="closeit()"><h1>X</h1></div>
+</div>
+
+<div id="header">
+	<div id="headerbg">
+		<a href=".."><h2>Home Page</h2></a>
+		<a href="../resume"><h2>Contact / Resume</h2></a>
+		<a href="https://linkedin.com/in/mosh-joshkowitz" target="_blank"><h2>My LinkedIn</h2></a>
+	</div>
+	
+	<div id="hback"><img src="../assets/header_blank.png"></div>
+	<div id="htext"><a href=".."><h2 id="htext1" onclick="closeit()">Joshua Moskowitz</h2></a></div>
+	
+	<div id="anchortext">
+		<a href="#top"><h2>Top</h2></a>
+		<a href="#game"><h2>Download</h2></a>
+	</div>
+</div>
+
+</body>
+<script>
+// CUT OFF PAGE WHERE THE BACK BUTTON IS: //
+var thebottom = document.getElementById("backhomebutton");
+
+window.onload = function(){
+	resizedocument();
+}
+window.onresize = function(){
+	resizedocument();
+}
+
+function resizedocument() {
+	var rect = thebottom.getBoundingClientRect();
+
+		document.body.style.height = rect.top + window.scrollY + "px";
+		//console.log(document.body.style.height);
+}
+
+// Create an observer object:
+const resizeObserver = new ResizeObserver(entries => resizedocument() 
+//console.log('Body height changed:', entries[0].target.clientHeight)
+);
+
+// Start watching for when the page resizes:
+resizeObserver.observe(document.body);
+
+// HOVER TO FRONT: //
+var imgdisplays = document.getElementsByClassName("talldisplay");
+
+for (var u = 0; u < imgdisplays.length; u++) {
+	imgdisplays[u].setAttribute("onmouseover", "highlight(this)");
+	imgdisplays[u].setAttribute("onmouseout", "unhighlight(this)");
+	imgdisplays[u].setAttribute("onclick", "focusme(this.childNodes[3].children)");
+	// ^ Makes the divs clickable, and preps the main child element for the focusme() function.
+}
+	
+function highlight(parchment) {
+	parchment.style.filter = "brightness(1.2)";
+	parchment.childNodes[3].style.filter = "brightness(0.825)"; //Counteracts the outer brightness filter.
+}
+function unhighlight(parchment) {
+	parchment.removeAttribute("style");
+	parchment.childNodes[3].removeAttribute("style");
+}
+
+function focusme(child) {
+	var grayback = document.getElementById("grayback");
+	var closeX2 = document.getElementById("closeX2");
+	grayback.style.display = "flex";
+	closeX2.style.display = "block";
+	
+	var copy = child[0].cloneNode(true); //Makes a copy of the the child element for the lightbox display.
+	
+	var newelement = document.createElement("div");
+	grayback.appendChild(newelement);
+	newelement.setAttribute("id", "focus");
+	newelement.appendChild(copy);
+}
+
+/*function modifyit() {
+	document.getElementById('iframe-adobe-dc-view').setAttribute("sandbox", "allow-scripts");
+	document.getElementById('iframe-adobe-dc-view').setAttribute("onload", "onFrameLoad()");
+	//document.getElementById('iframe-adobe-dc-view').setAttribute("style", "overflow: visible !important; text-overflow: unset !important;");
+}
+
+function onFrameLoad() {
+	var title = document.getElementById('iframe-adobe-dc-view').contentWindow.document.getElementsByClassName("sdk-HeaderFileInfoView-fileBreadCrumb");
+	console.log(title);
+	console.log(title[0]);
+	title[0].setAttribute("style", "overflow: visible !important");
+	title[0].setAttribute("style", "text-overflow: unset !important");
+}*/
+
+</script>
+</html>
