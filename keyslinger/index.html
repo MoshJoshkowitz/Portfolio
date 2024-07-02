@@ -47,7 +47,7 @@
 <div class="widedisplay parchment2" style="padding: 20px">
 	<h2 style="text-align: left">Key Slinger is a quick-time arcade-styled game in which the player, a samurai gunslinger, slices and shoots creatures from hell to try and get the highest score possible.<br><br>
 	This is a passion project I made that was done in my free time using Unity. I created everything with the exception of the gameplay music, which was created by Ethan Moskowitz. Below is the prototype of Key Slinger along with the Game Design Document (GDD) for the game and my plans for it moving forward.<br><br>
-	August 10th, 2021 - July 2nd 2022	
+	Duration: 9 Months	
 	</h2>
 	
 </div>
@@ -69,6 +69,41 @@
 		How long can you last?</h2>
 	</div>
 </div>
+
+<br><br><br>
+
+<div class="featuredsection scroll3"> <a name="game"></a>
+<h1>Enemy Types</h1>
+</div>
+	
+<div class="displayflexer">
+
+	<div class="talldisplay parchment2" style = "padding: 10px;">
+		<h2 style="text-align: center; font-size: 35px;">The Fiend:</h2>
+		<h3 style="text-align: center; font-size: 15px;">The first enemy the player encounters. Can be sliced when within the player's range.<br> Movement: Fast<br>Hits to kill: 1<br>Killed by: Katana</h3>
+		<img src="C:\Users\Josh\Dropbox\My PC (PC)\Documents\Github\Portfolio\keyslinger\Fiend.gif"><br>
+	</div>
+
+	<div class="talldisplay parchment2" style = "padding: 10px;">
+		<h2 style="text-align: center; font-size: 35px;">The Imp:</h2>
+		<h3 style="text-align: center; font-size: 15px;">A slow moving enemy that requires the revolver to take down. Can be shot when the imp's letter is hightlighted.<br> Movement: Slow<br>Hits to kill: 1<br>Killed by: Revolver</h3>
+		<img src="C:\Users\Josh\Dropbox\My PC (PC)\Documents\Github\Portfolio\keyslinger\Imp.gif"><br>
+	</div>
+</div>
+
+<div class="displayflexer">
+	<div class="talldisplay parchment2" style = "padding: 10px;">
+		<h2 style="text-align: center; font-size: 35px;">The Devil:</h2>
+		<h3 style="text-align: center; font-size: 15px;">The evolved version of the Imp. First multi-hit enemy the player encounters.<br> Movement: Slow to Fast<br>Hits to kill: 2<br>Killed by: Revolver, then Katana</h3>
+		<img src="C:\Users\Josh\Dropbox\My PC (PC)\Documents\Github\Portfolio\keyslinger\Devil.gif"><br>
+	</div>
+
+	<div class="talldisplay parchment2" style = "padding: 10px;">
+		<h2 style="text-align: center; font-size: 35px;">The Demon:</h2>
+		<h3 style="text-align: center; font-size: 15px;"> The evolved version of the Fiend. Strongest enemy in the game.<br> Movement: Slot to Medium to Fast<br>Hits to kill: 3<br>Killed by: Two revolver shots, then Katana</h3>
+		<img src="C:\Users\Josh\Dropbox\My PC (PC)\Documents\Github\Portfolio\keyslinger\Demon.gif"><br>
+	</div>
+</div>	
 
 <br><br><br>
 
@@ -159,13 +194,14 @@ resizeObserver.observe(document.body);
 // HOVER TO FRONT: //
 var imgdisplays = document.getElementsByClassName("talldisplay");
 
+/*
 for (var u = 0; u < imgdisplays.length; u++) {
 	imgdisplays[u].setAttribute("onmouseover", "highlight(this)");
 	imgdisplays[u].setAttribute("onmouseout", "unhighlight(this)");
 	imgdisplays[u].setAttribute("onclick", "focusme(this.childNodes[3].children)");
 	// ^ Makes the divs clickable, and preps the main child element for the focusme() function.
 }
-	
+*/	
 function highlight(parchment) {
 	parchment.style.filter = "brightness(1.2)";
 	parchment.childNodes[3].style.filter = "brightness(0.825)"; //Counteracts the outer brightness filter.
